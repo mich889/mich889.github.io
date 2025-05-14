@@ -340,21 +340,18 @@ a:hover {
 
 @media (max-width: 670px) {
   .navbar .nav-menu {
-    position: fixed;
-    right: -100vw;
-    top: 4.5rem;
-    flex-direction: column;
-    width: calc(80% - 10px);
-    transition: 0.3s;
-    box-shadow: var(--shadow);
-    padding: 2rem;
-    border-radius: 5px;
-    align-items: flex-start;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    flex-direction: row;
+    width: auto;
+    padding: 0;
+    align-items: center;
   }
 
   .navbar .btn {
     margin: 0;
-    margin-top: 1rem;
   }
 
   .nav-menu {
@@ -365,15 +362,14 @@ a:hover {
   }
   
   .nav-menu li {
-    margin-right: 0;
     margin: 0;
     padding: 0;
   }
   
   .nav-menu .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin: 0;
-    padding: 0 0.1rem; 
+    padding: 0 0.5rem; 
   }
   
   .nav-menu .btn {
@@ -474,6 +470,26 @@ hr {
 @media (max-width: 700px) {
   .wide-margin-line {
     max-width: 95vw;
+  }
+}
+
+.navbar {
+  box-shadow: none !important;
+  position: static !important;
+}
+
+.nav-menu {
+  box-shadow: none !important;
+}
+
+h2, h1, .nav-link {
+  text-shadow: none !important;
+}
+
+@media (max-width: 670px) {
+  .navbar {
+    position: static !important;
+    box-shadow: none !important;
   }
 }
 
