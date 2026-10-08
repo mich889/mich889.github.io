@@ -5,147 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VLM Demo — Michelle Chen</title>
-    <meta
-      name="description"
-      content="Natural-language search over millions of hours of driving video, with relevance feedback that refines the query vector in place."
-    />
-
-    <!-- Link -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon/favicon-32x32.png"
-    />
+    <!-- unlisted: reachable by direct link only, kept out of search results -->
+    <meta name="robots" content="noindex, nofollow" />
     <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico" />
-    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/utilities.css" />
-
     <style>
-      /* page-local: the video is the content, so let it run wider than prose */
-      .demo-stage {
-        max-width: 1100px;
-        width: 92vw;
-        margin: 0 auto;
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000;
       }
-      .demo-stage video {
-        width: 100%;
-        height: auto;
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      video {
+        max-width: 100%;
+        max-height: 100%;
         display: block;
-        border-radius: 8px;
-      }
-      .demo-caption {
-        max-width: 1100px;
-        width: 92vw;
-        margin: 1.25rem auto 0;
-        text-align: left;
-      }
-      .demo-caption li {
-        margin-bottom: 0.4rem;
-      }
-      .demo-meta {
-        font-size: 0.85rem;
-        opacity: 0.7;
-        margin-top: 1.5rem;
       }
     </style>
   </head>
   <body>
-    <header id="hero">
-      <nav class="navbar">
-        <div class="container">
-          <ul class="nav-menu">
-            <li><a class="nav-link" href="/">★</a></li>
-            <li><a class="nav-link" href="/projects.html">PROJECTS</a></li>
-            <li>
-              <a
-                class="nav-link"
-                href="https://michellechenjpg.my.canva.site/"
-                target="_blank"
-                >PHOTOS</a
-              >
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <div>
-        <section class="header-container">
-          <h1>Natural-language search over driving video</h1>
-
-          <p class="wide-margin-line">
-            I fine-tuned a vision-language model so that millions of hours of
-            driving footage can be searched by typing what you want to find.
-            This is the search running against the full corpus — no pre-built
-            tags, no manual labeling.
-          </p>
-        </section>
-      </div>
-    </header>
-
-    <div class="demo-stage">
-      <video
-        controls
-        playsinline
-        preload="metadata"
-        poster="/assets/vlm-search-poster.jpg"
-      >
-        <source src="/assets/vlm-search.mp4" type="video/mp4" />
-        Your browser doesn't support embedded video.
-        <a href="/assets/vlm-search.mp4">Download the demo instead.</a>
-      </video>
-    </div>
-
-    <div class="demo-caption content-text">
-      <p>What's happening in the clip:</p>
-      <li>
-        A plain-English query runs across the entire clip corpus in just over a
-        second.
-      </li>
-      <li>
-        Thumbs up and down on individual results refine the query vector in
-        place — relevance feedback, not a re-query.
-      </li>
-      <li>
-        Top-result similarity climbs from roughly 0.46 to 0.88 after a couple of
-        rounds of feedback.
-      </li>
-      <li>
-        The refined vector gets a threshold, is saved as a reusable tag, and
-        exports as a dataset for training.
-      </li>
-
-      <p class="demo-meta">
-        Built on LoRA fine-tuning of NVIDIA Cosmos VLMs with a contrastive
-        MaxSim late-interaction objective and hard negative mining. Evaluated
-        against a human-labeled taxonomy using top-k precision and recall.
-      </p>
-    </div>
-
-    <div class="container">
-      <div class="social">
-        <a href="https://www.linkedin.com/in/mich889/" target="_blank">
-          <img src="/assets/linkedin-icon.svg" alt="Linkedin" />
-        </a>
-        <a href="mailto:mjiahui.chen@gmail.com" target="_blank">
-          <img src="/assets/gmail-icon.svg" alt="Gmail" />
-        </a>
-        <a href="https://github.com/mich889" target="_blank">
-          <img src="/assets/github-icon.svg" alt="GitHub" />
-        </a>
-      </div>
-    </div>
+    <video
+      controls
+      autoplay
+      muted
+      playsinline
+      preload="metadata"
+      poster="/assets/vlm-search-poster.jpg"
+    >
+      <source src="/assets/vlm-search.mp4" type="video/mp4" />
+      <a href="/assets/vlm-search.mp4">Download the video</a>
+    </video>
   </body>
 </html>
