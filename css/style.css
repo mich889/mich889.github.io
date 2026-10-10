@@ -493,3 +493,13 @@ h2, h1, .nav-link {
   }
 }
 
+/* intro sentence -- wider than the 600px prose column so it stays on one line */
+.intro-line {
+  max-width: 900px;
+}
+
+@media (min-width: 820px) {
+  .intro-line p {
+    white-space: nowrap;
+  }
+}
